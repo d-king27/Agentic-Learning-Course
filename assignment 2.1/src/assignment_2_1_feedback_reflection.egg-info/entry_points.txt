@@ -1,0 +1,2 @@
+[console_scripts]
+feedback-reflection = feedback_reflection.main:main

@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/assignment_2_1_feedback_reflection.egg-info/PKG-INFO
+src/assignment_2_1_feedback_reflection.egg-info/SOURCES.txt
+src/assignment_2_1_feedback_reflection.egg-info/dependency_links.txt
+src/assignment_2_1_feedback_reflection.egg-info/entry_points.txt
+src/assignment_2_1_feedback_reflection.egg-info/requires.txt
+src/assignment_2_1_feedback_reflection.egg-info/top_level.txt
+src/feedback_reflection/__init__.py
+src/feedback_reflection/agent.py
+src/feedback_reflection/main.py

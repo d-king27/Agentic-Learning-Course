@@ -1,0 +1,20 @@
+[project]
+name = "assignment-2-1-feedback-reflection"
+version = "0.1.0"
+description = "A reflective customer feedback analysis agent."
+requires-python = ">=3.10"
+dependencies = [
+    "langchain",
+    "langchain-openai",
+    "openai",
+]
+
+[project.scripts]
+feedback-reflection = "feedback_reflection.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

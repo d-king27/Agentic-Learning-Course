@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: assignment-2-1-feedback-reflection
+Version: 0.1.0
+Summary: A reflective customer feedback analysis agent.
+Requires-Python: >=3.10
+Requires-Dist: langchain
+Requires-Dist: openai

@@ -1,0 +1,20 @@
+[project]
+name = "assignment-2-reflective-agent"
+version = "0.1.0"
+description = "A reflective agent that critiques and revises code snippets iteratively."
+requires-python = ">=3.10"
+dependencies = [
+    "langchain",
+    "langchain-openai",
+    "openai",
+]
+
+[project.scripts]
+reflective-agent = "reflective_agent.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
