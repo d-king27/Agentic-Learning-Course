@@ -1,0 +1,47 @@
+Assignment 4.1 Deliverables: Meal Preparation Planning Agent
+===========================================================
+
+1. Python Script
+----------------
+Submit the complete implementation:
+
+- src/meal_prep_planner/agent.py
+- src/meal_prep_planner/main.py
+
+The script collects meal details from the user and generates a meal preparation
+plan with a shopping list, cooking steps, timing plan, serving tips, and optional
+ingredient alternatives.
+
+2. Demo Evidence
+----------------
+Include a demo video, screenshots, or terminal output showing the agent in
+action.
+
+Example input:
+Meal type: Dinner
+Dietary preference: Vegetarian
+Servings: 2
+
+Generated output:
+
+3. Brief Write-Up
+-----------------
+Explain how the agent works.
+
+Describe any challenges faced during development.
+
+4. Evaluation Notes
+-------------------
+
+Completeness:
+Does the agent collect all necessary meal preparation details?
+
+Clarity:
+Are the shopping list and instructions easy to understand?
+
+Interactivity:
+Does the agent engage the user effectively?
+
+Bonus:
+Were any personalization features implemented?
+

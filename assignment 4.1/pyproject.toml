@@ -1,0 +1,22 @@
+[project]
+name = "assignment-4-1-meal-prep-planner"
+version = "0.1.0"
+description = "A meal preparation planning agent with personalized shopping lists and cooking steps."
+requires-python = ">=3.10"
+dependencies = [
+    "langchain",
+    "langchain-core",
+    "langchain-openai",
+    "openai",
+]
+
+[project.scripts]
+meal-prep-planner = "meal_prep_planner.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

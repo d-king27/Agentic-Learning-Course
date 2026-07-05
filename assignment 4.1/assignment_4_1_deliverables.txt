@@ -1,0 +1,188 @@
+Assignment 4.1 Deliverables: Meal Preparation Planning Agent
+===========================================================
+
+Objective
+---------
+Build an interactive AI agent that uses the Planning Pattern to create meal
+preparation plans from user preferences. The agent collects structured meal
+details, passes them to a language model, and produces a practical plan with a
+shopping list, cooking instructions, timing notes, serving tips, and optional
+personalization.
+
+1. Python Script
+----------------
+The meal preparation planning agent is implemented in the following files:
+
+- src/meal_prep_planner/agent.py
+- src/meal_prep_planner/main.py
+
+agent.py defines the MealPrepPlannerAgent and the MealPreferences data structure.
+It loads the shared OpenAI API key from the course .env file, formats user
+preferences into a structured prompt, and asks the language model to generate a
+meal preparation plan.
+
+main.py provides the command-line interface. It supports both interactive input
+and direct command-line arguments, such as:
+
+python -m meal_prep_planner.main --meal-type "Dinner" --dietary "Vegetarian" --servings 2 --time 30 --allergies "None" --preferences "high protein"
+
+2. Demo Output
+--------------
+The following output was produced by running the agent:
+
+Command:
+
+python -m meal_prep_planner.main --meal-type "Dinner" --dietary "Vegetarian" --servings 2 --time 30 --allergies "None" --preferences "high protein"
+
+Output:
+
+Generating your meal plan...
+
+Generated meal preparation plan:
+
+1. Meal Overview:
+We will be preparing a high-protein vegetarian stir-fry comprising tofu, quinoa,
+and an assortment of colorful veggies. This meal is packed with protein, fiber,
+and essential vitamins, and can be cooked in under 30 minutes.
+
+2. Shopping List with Quantities:
+- Tofu (extra firm): 1 block
+- Quinoa: 1 cup
+- Red bell pepper: 1
+- Yellow bell pepper: 1
+- Broccoli: 1 small head
+- Carrot: 1
+- Soy Sauce: 3 tablespoons
+- Sesame oil: 2 tablespoons
+- Garlic: 2 cloves
+- Spring onion: 2
+- Salt and pepper to taste
+
+3. Ingredient Alternatives for Allergies or Preferences:
+If you prefer gluten-free, replace soy sauce with tamari. If you want to add
+more protein, you can include tempeh or seitan instead of tofu.
+
+4. Step-by-step Cooking Instructions:
+- Start with pressing the tofu for 15-20 minutes to remove excess water. After
+  pressing, cut it into cubes.
+- While your tofu is pressing, rinse 1 cup of quinoa under cold water, then cook
+  according to package instructions.
+- Heat 1 tablespoon of sesame oil in a pan over medium heat. Add the tofu cubes
+  and cook until browned on all sides. Remove from the pan and set aside.
+- In the same pan, add another tablespoon of sesame oil. Add finely chopped
+  garlic and saute until fragrant.
+- Add chopped bell peppers, broccoli, and carrots. Stir-fry for 5-7 minutes
+  until the vegetables are slightly tender.
+- Return the tofu to the pan, and add cooked quinoa. Stir in soy sauce, and
+  season with salt and pepper. Stir-fry everything together for another 2-3
+  minutes.
+- Garnish with chopped spring onions before serving.
+
+5. Timing Plan:
+- Pressing tofu: 15-20 minutes
+- Cooking quinoa: 15 minutes
+- Stir-frying tofu: 5 minutes
+- Sauteing garlic and stir-frying vegetables: 7-10 minutes
+- Combining everything: 2-3 minutes
+
+6. Serving Tips:
+Serve the stir-fry hot, garnished with spring onions. You can add a sprinkle of
+sesame seeds or a dash of hot sauce for extra flavor.
+
+7. Side Dish or Beverage Recommendations:
+This high-protein vegetarian stir-fry goes well with a fresh side salad or a
+bowl of miso soup. For beverages, try green tea or a chilled glass of white wine
+for a perfect pairing.
+
+3. Brief Write-Up
+-----------------
+The agent works by collecting structured meal planning details from the user,
+including meal type, dietary preferences, number of servings, available cooking
+time, allergies, and extra preferences. These details are stored in a
+MealPreferences object and converted into a clear prompt for the language model.
+
+The prompt instructs the model to act as a practical meal preparation assistant
+and to produce a plan with specific sections: meal overview, shopping list,
+ingredient alternatives, step-by-step cooking instructions, timing plan, serving
+tips, and side dish or beverage recommendations.
+
+This demonstrates the Planning Pattern because the agent takes a broad goal,
+such as preparing dinner, and breaks it into smaller actionable parts. Instead
+of producing a general suggestion, the agent creates an executable plan that a
+user can follow from shopping through serving.
+
+An important observation from this assignment is that planning patterns are
+useful for most agents with a specific goal. When an agent is trying to complete
+a defined task, structured inputs such as objectives, parameters, constraints,
+and expected outputs help guide the model's reasoning. In this case, the
+planning structure helped the agent tailor the meal plan to the user's diet,
+serving size, time limit, and preference for high protein. This same pattern
+could improve many specific-purpose agents, because it reduces vague responses
+and encourages the model to produce practical, step-by-step outputs.
+
+One challenge during development was making sure the prompt was specific enough
+to produce a complete and useful meal plan. A vague prompt might only suggest a
+recipe idea, but the assignment required a shopping list, cooking steps, timing
+plan, and personalization. Another challenge was balancing structure with
+flexibility, so the agent could support both required inputs and bonus features
+without becoming difficult to use.
+
+4. Evaluation Notes
+-------------------
+
+Completeness:
+The agent collects the key details needed for meal planning: meal type, dietary
+preferences, servings, cooking time, allergies, and extra preferences. The
+generated output includes a meal overview, shopping list, ingredient
+alternatives, cooking instructions, timing plan, serving tips, and side dish or
+beverage recommendations.
+
+Clarity:
+The shopping list and instructions are easy to understand. The output is divided
+into clear sections, and the cooking instructions are written as ordered,
+actionable steps.
+
+Interactivity:
+The script supports an interactive mode that prompts the user for meal details.
+It also supports command-line arguments for quick demo runs, which makes it easy
+to test and capture output.
+
+Bonus:
+Personalization features were implemented. The agent accepts available cooking
+time, allergies or ingredients to avoid, and extra preferences such as
+high-protein meals. It also includes ingredient alternatives and side dish or
+beverage recommendations.
+
+5. Reflection Questions
+-----------------------
+
+Question 1: How does this agent use the Planning Pattern?
+
+The agent uses the Planning Pattern by turning a general request into a
+structured plan. It collects meal constraints, passes them to the model in a
+clear format, and asks the model to break the task into shopping, preparation,
+cooking, timing, and serving steps. This makes the output practical rather than
+just descriptive.
+
+Question 2: How does structured input improve the quality of the meal plan?
+
+Structured input gives the model useful boundaries. The meal type, dietary
+restriction, serving size, time limit, allergy information, and extra preference
+all shape the final plan. This helps the model generate a meal that is more
+relevant, feasible, and personalized.
+
+Question 3: What improvements could make the agent more useful?
+
+The agent could be improved by adding saved user profiles, weekly meal planning,
+automatic grocery list export, budget limits, calorie or macro targets, and
+pantry-aware planning. It could also ask follow-up questions when the user gives
+incomplete details.
+
+Question 4: How could this planning approach be extended to other tasks?
+
+The same approach could be used for other specific-goal agents, such as travel
+planning, study planning, fitness routines, event planning, project management,
+or household task planning. In each case, the agent would collect structured
+requirements, identify constraints, and generate an actionable step-by-step
+plan.
+

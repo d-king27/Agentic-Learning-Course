@@ -1,0 +1,2 @@
+[console_scripts]
+meal-prep-planner = meal_prep_planner.main:main

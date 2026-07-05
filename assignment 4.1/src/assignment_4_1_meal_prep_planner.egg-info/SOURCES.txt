@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/assignment_4_1_meal_prep_planner.egg-info/PKG-INFO
+src/assignment_4_1_meal_prep_planner.egg-info/SOURCES.txt
+src/assignment_4_1_meal_prep_planner.egg-info/dependency_links.txt
+src/assignment_4_1_meal_prep_planner.egg-info/entry_points.txt
+src/assignment_4_1_meal_prep_planner.egg-info/requires.txt
+src/assignment_4_1_meal_prep_planner.egg-info/top_level.txt
+src/meal_prep_planner/__init__.py
+src/meal_prep_planner/agent.py
+src/meal_prep_planner/main.py

@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: assignment-4-1-meal-prep-planner
+Version: 0.1.0
+Summary: A meal preparation planning agent with personalized shopping lists and cooking steps.
+Requires-Python: >=3.10
+Requires-Dist: langchain
+Requires-Dist: langchain-core
+Requires-Dist: langchain-openai
+Requires-Dist: openai
