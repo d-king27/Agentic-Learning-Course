@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: assignment-5-1-weather-logistics-system
+Version: 0.1.0
+Summary: A multi-agent weather logistics system with forecast insights and chart generation.
+Requires-Python: >=3.10
+Requires-Dist: langchain
+Requires-Dist: langchain-core
+Requires-Dist: langchain-openai
+Requires-Dist: matplotlib
+Requires-Dist: openai
+Requires-Dist: requests

@@ -1,0 +1,23 @@
+[project]
+name = "assignment-5-multi-agent-stock-system"
+version = "0.1.0"
+description = "A multi-agent stock data gathering and processing system."
+requires-python = ">=3.10"
+dependencies = [
+    "langchain",
+    "langchain-core",
+    "langchain-openai",
+    "openai",
+    "requests",
+]
+
+[project.scripts]
+multi-agent-stock-system = "multi_agent_stock_system.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

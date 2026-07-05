@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/assignment_5_multi_agent_stock_system.egg-info/PKG-INFO
+src/assignment_5_multi_agent_stock_system.egg-info/SOURCES.txt
+src/assignment_5_multi_agent_stock_system.egg-info/dependency_links.txt
+src/assignment_5_multi_agent_stock_system.egg-info/entry_points.txt
+src/assignment_5_multi_agent_stock_system.egg-info/requires.txt
+src/assignment_5_multi_agent_stock_system.egg-info/top_level.txt
+src/multi_agent_stock_system/__init__.py
+src/multi_agent_stock_system/agents.py
+src/multi_agent_stock_system/main.py

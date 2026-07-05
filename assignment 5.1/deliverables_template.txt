@@ -1,0 +1,73 @@
+Assignment 5.1 Deliverables: Multi-Agent Weather Logistics System
+=================================================================
+
+1. Python Code
+--------------
+Submit the complete implementation:
+
+- src/weather_logistics_system/agents.py
+- src/weather_logistics_system/main.py
+
+The system includes:
+
+- Data Gathering Agent
+- Data Processing Agent
+- Visualization Agent
+
+2. Generated Insights
+---------------------
+Provide outputs for three different locations.
+
+Sample Run 1:
+Location:
+Generated insights:
+Graph path:
+
+Sample Run 2:
+Location:
+Generated insights:
+Graph path:
+
+Sample Run 3:
+Location:
+Generated insights:
+Graph path:
+
+3. Graphs
+---------
+Include screenshots or PNG files from:
+
+outputs/
+
+The command line prints the saved graph path after each run.
+
+4. Reflection Report
+--------------------
+Discuss how each agent contributes to the overall system.
+
+Highlight challenges and how they were resolved.
+
+5. Reflection Questions
+-----------------------
+
+Question 1: How does collaboration between three agents improve the system's
+efficiency?
+
+Answer:
+
+Question 2: What challenges did you face in integrating the agents?
+
+Answer:
+
+Question 3: How could this system be extended for other use cases, such as
+financial analysis?
+
+Answer:
+
+6. Bonus Tasks
+--------------
+Bonus feature included:
+
+- Multiple locations can be handled in one command by passing comma-separated
+  locations, such as London,New York,Tokyo.
+

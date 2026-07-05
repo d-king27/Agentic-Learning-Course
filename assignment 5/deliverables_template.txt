@@ -1,0 +1,58 @@
+Assignment 5 Deliverables: Multi-Agent Data Gathering and Processing System
+=========================================================================
+
+1. Python Script
+----------------
+Submit the full implementation:
+
+- src/multi_agent_stock_system/agents.py
+- src/multi_agent_stock_system/main.py
+
+The system includes a Data Gathering Agent, Data Processing Agent, and bonus
+Visualization Agent.
+
+2. Sample Outputs
+-----------------
+Include at least three example runs with different stock symbols.
+
+Sample Run 1:
+Symbol:
+Output:
+
+Sample Run 2:
+Symbol:
+Output:
+
+Sample Run 3:
+Symbol:
+Output:
+
+3. Reflection
+-------------
+Explain the interaction between the data gathering and processing agents.
+
+Describe the value of multi-agent collaboration in this system.
+
+4. Reflection Questions
+-----------------------
+
+Question 1: How does dividing the tasks between two agents improve efficiency
+and clarity?
+
+Answer:
+
+Question 2: What challenges did you encounter during data integration?
+
+Answer:
+
+Question 3: How could this system be extended to support more complex analysis
+or additional data sources?
+
+Answer:
+
+5. Bonus Tasks
+--------------
+Bonus feature included:
+
+- A Visualization Agent creates a simple text chart of recent closing prices.
+

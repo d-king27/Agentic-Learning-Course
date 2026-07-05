@@ -1,0 +1,2 @@
+[console_scripts]
+weather-logistics-system = weather_logistics_system.main:main

@@ -1,0 +1,2 @@
+[console_scripts]
+multi-agent-stock-system = multi_agent_stock_system.main:main

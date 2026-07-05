@@ -1,0 +1,24 @@
+[project]
+name = "assignment-5-1-weather-logistics-system"
+version = "0.1.0"
+description = "A multi-agent weather logistics system with forecast insights and chart generation."
+requires-python = ">=3.10"
+dependencies = [
+    "langchain",
+    "langchain-core",
+    "langchain-openai",
+    "matplotlib",
+    "openai",
+    "requests",
+]
+
+[project.scripts]
+weather-logistics-system = "weather_logistics_system.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
