@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/assignment_3_1_stock_market_advisor.egg-info/PKG-INFO
+src/assignment_3_1_stock_market_advisor.egg-info/SOURCES.txt
+src/assignment_3_1_stock_market_advisor.egg-info/dependency_links.txt
+src/assignment_3_1_stock_market_advisor.egg-info/entry_points.txt
+src/assignment_3_1_stock_market_advisor.egg-info/requires.txt
+src/assignment_3_1_stock_market_advisor.egg-info/top_level.txt
+src/stock_market_advisor/__init__.py
+src/stock_market_advisor/agent.py
+src/stock_market_advisor/main.py

@@ -38,6 +38,12 @@ Add your API key:
 OPEN_AI_KEY="your-api-key-here"
 ```
 
+You can also choose a model in the same file:
+
+```text
+OPENAI_MODEL="gpt-4"
+```
+
 ## Step 2: Define the Problem
 
 The agent starts with this customer feedback:
@@ -125,7 +131,15 @@ Run:
 python -m feedback_reflection.main
 ```
 
+For a quick smoke test, run one iteration first:
+
+```powershell
+python -m feedback_reflection.main --iterations 1
+```
+
 Observe how each iteration improves the analysis and recommendations.
+The agent uses a 45-second request timeout so a slow API response does not appear
+to hang forever.
 
 ## Expected Outcomes
 

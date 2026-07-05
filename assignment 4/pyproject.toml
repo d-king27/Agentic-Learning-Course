@@ -1,7 +1,7 @@
 [project]
-name = "assignment-2-1-feedback-reflection"
+name = "assignment-4-virtual-event-planner"
 version = "0.1.0"
-description = "A reflective customer feedback analysis agent."
+description = "A virtual event planning agent with structured phases and progress tracking."
 requires-python = ">=3.10"
 dependencies = [
     "langchain",
@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [project.scripts]
-feedback-reflection = "feedback_reflection.main:main"
+virtual-event-planner = "virtual_event_planner.main:main"
 
 [build-system]
 requires = ["setuptools>=68"]
@@ -19,3 +19,4 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+

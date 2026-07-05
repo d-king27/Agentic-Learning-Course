@@ -1,17 +1,18 @@
 [project]
-name = "assignment-2-1-feedback-reflection"
+name = "assignment-3-1-stock-market-advisor"
 version = "0.1.0"
-description = "A reflective customer feedback analysis agent."
+description = "A stock market advisor agent that combines Alpha Vantage data with generative AI."
 requires-python = ">=3.10"
 dependencies = [
     "langchain",
     "langchain-core",
     "langchain-openai",
     "openai",
+    "requests",
 ]
 
 [project.scripts]
-feedback-reflection = "feedback_reflection.main:main"
+stock-market-advisor = "stock_market_advisor.main:main"
 
 [build-system]
 requires = ["setuptools>=68"]
@@ -19,3 +20,4 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+

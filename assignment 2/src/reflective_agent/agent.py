@@ -4,11 +4,7 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    SystemMessagePromptTemplate,
-)
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 
 
@@ -49,8 +45,9 @@ Suggest practical improvements, then refine those insights before revising the c
 
 analysis_prompt_template = ChatPromptTemplate.from_messages(
     [
-        SystemMessagePromptTemplate.from_template(SYSTEM_PROMPT),
-        HumanMessagePromptTemplate.from_template(
+        ("system", SYSTEM_PROMPT),
+        (
+            "human",
             """
 Analyze the Python code below.
 
@@ -71,8 +68,9 @@ Code:
 
 revision_prompt_template = ChatPromptTemplate.from_messages(
     [
-        SystemMessagePromptTemplate.from_template(SYSTEM_PROMPT),
-        HumanMessagePromptTemplate.from_template(
+        ("system", SYSTEM_PROMPT),
+        (
+            "human",
             """
 Refine the following code analysis so it is clearer, deeper, and more feasible.
 Then provide a revised version of the code.
@@ -107,9 +105,21 @@ class ReflectionResult:
 
 
 class ReflectiveCodeAgent:
-    def __init__(self, model: str = "gpt-4", temperature: float = 0.7) -> None:
+    def __init__(
+        self,
+        model: str | None = None,
+        temperature: float = 0.7,
+        request_timeout: float = 45,
+        max_retries: int = 1,
+    ) -> None:
         load_local_env()
-        self.llm = ChatOpenAI(model=model, temperature=temperature)
+        self.model = model or os.getenv("OPENAI_MODEL", "gpt-4")
+        self.llm = ChatOpenAI(
+            model=self.model,
+            temperature=temperature,
+            request_timeout=request_timeout,
+            max_retries=max_retries,
+        )
 
     def analyze(self, code: str) -> str:
         analysis_prompt = analysis_prompt_template.format_prompt(code=code).to_messages()
@@ -131,7 +141,9 @@ class ReflectiveCodeAgent:
         results: list[ReflectionResult] = []
 
         for round_number in range(1, rounds + 1):
+            print(f"\nReflection round {round_number}: analyzing code...")
             analysis = self.analyze(current_code)
+            print(f"Reflection round {round_number}: refining and revising code...")
             refined_analysis, revised_code = self.refine_and_revise(
                 current_code,
                 analysis,

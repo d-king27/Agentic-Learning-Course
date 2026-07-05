@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import argparse
+
 from feedback_reflection.agent import ReflectiveFeedbackAgent
 
 
@@ -10,8 +12,17 @@ CUSTOMER_FEEDBACK = (
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Run the reflective feedback agent.")
+    parser.add_argument(
+        "--iterations",
+        type=int,
+        default=3,
+        help="Number of reflection iterations to run.",
+    )
+    args = parser.parse_args()
+
     agent = ReflectiveFeedbackAgent()
-    results = agent.run(CUSTOMER_FEEDBACK, iterations=3)
+    results = agent.run(CUSTOMER_FEEDBACK, iterations=args.iterations)
 
     print("Customer feedback:")
     print(CUSTOMER_FEEDBACK)
@@ -29,4 +40,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -1,0 +1,53 @@
+Assignment 3 Deliverables: Weather Recommendation Agent
+=======================================================
+
+1. Python Script
+----------------
+Submit the complete code for the weather recommendation agent:
+
+- src/weather_recommendation/agent.py
+- src/weather_recommendation/main.py
+
+The script accepts a city, fetches current weather data from OpenWeatherMap, and
+uses a language model to generate tailored recommendations.
+
+2. Sample Runs
+--------------
+Include output for at least three different city inputs.
+
+Sample Run 1:
+City:
+Output:
+
+Sample Run 2:
+City:
+Output:
+
+Sample Run 3:
+City:
+Output:
+
+3. Reflection Report
+--------------------
+Describe how the agent fetches and processes weather data.
+
+Discuss the value of integrating APIs with generative AI.
+
+4. Reflection Questions
+-----------------------
+
+Question 1: How does the agent dynamically adjust its recommendations based on
+the weather data?
+
+Answer:
+
+Question 2: What challenges did you face in integrating the weather API and AI
+workflows?
+
+Answer:
+
+Question 3: How could this agent be extended to include additional features,
+such as hourly weather updates or multi-day forecasts?
+
+Answer:
+

@@ -4,11 +4,7 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    SystemMessagePromptTemplate,
-)
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 
 
@@ -40,10 +36,9 @@ def load_local_env() -> None:
 
 analysis_prompt_template = ChatPromptTemplate.from_messages(
     [
-        SystemMessagePromptTemplate.from_template(
-            "You are a customer feedback analyst. Analyze the feedback below."
-        ),
-        HumanMessagePromptTemplate.from_template(
+        ("system", "You are a customer feedback analyst. Analyze the feedback below."),
+        (
+            "human",
             """
 Customer feedback:
 {feedback}
@@ -62,10 +57,12 @@ Return your response with these sections:
 
 revision_prompt_template = ChatPromptTemplate.from_messages(
     [
-        SystemMessagePromptTemplate.from_template(
-            "Refine the following analysis to improve clarity and suggestions."
+        (
+            "system",
+            "Refine the following analysis to improve clarity and suggestions.",
         ),
-        HumanMessagePromptTemplate.from_template(
+        (
+            "human",
             """
 Analysis to refine:
 {analysis}
@@ -91,9 +88,21 @@ class FeedbackReflectionResult:
 
 
 class ReflectiveFeedbackAgent:
-    def __init__(self, model: str = "gpt-4", temperature: float = 0.7) -> None:
+    def __init__(
+        self,
+        model: str | None = None,
+        temperature: float = 0.7,
+        request_timeout: float = 45,
+        max_retries: int = 1,
+    ) -> None:
         load_local_env()
-        self.llm = ChatOpenAI(model=model, temperature=temperature)
+        self.model = model or os.getenv("OPENAI_MODEL", "gpt-4")
+        self.llm = ChatOpenAI(
+            model=self.model,
+            temperature=temperature,
+            request_timeout=request_timeout,
+            max_retries=max_retries,
+        )
 
     def analyze(self, feedback: str) -> str:
         analysis_prompt = analysis_prompt_template.format_prompt(
@@ -114,7 +123,9 @@ class ReflectiveFeedbackAgent:
         results: list[FeedbackReflectionResult] = []
 
         for iteration in range(1, iterations + 1):
+            print(f"\nIteration {iteration}: analyzing feedback...")
             analysis = self.analyze(current_input)
+            print(f"Iteration {iteration}: refining analysis...")
             refined_analysis = self.refine(analysis)
             results.append(
                 FeedbackReflectionResult(

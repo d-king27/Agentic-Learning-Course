@@ -1,0 +1,61 @@
+Assignment 3.1 Deliverables: Stock Market Advisor Agent
+=======================================================
+
+1. Python Script
+----------------
+Submit the complete code for the stock market advisor agent:
+
+- src/stock_market_advisor/agent.py
+- src/stock_market_advisor/main.py
+
+The script accepts a stock symbol, fetches daily market data from Alpha Vantage,
+analyzes recent price and volume trends, and uses a language model to generate a
+buy, sell, or hold style recommendation.
+
+2. Sample Runs
+--------------
+Include output for at least three different stock symbols.
+
+Sample Run 1:
+Symbol:
+Output:
+
+Sample Run 2:
+Symbol:
+Output:
+
+Sample Run 3:
+Symbol:
+Output:
+
+3. Reflection Report
+--------------------
+Describe how tool integration enhanced the agent's capabilities.
+
+Discuss the challenges faced during implementation, such as API response
+formats, API rate limits, data freshness, and connecting structured market data
+to a language model prompt.
+
+4. Reflection Questions
+-----------------------
+
+Question 1: How did integrating the stock API improve the AI's real-world
+applicability?
+
+Answer:
+
+Question 2: What insights did the AI generate that were enhanced by the external
+tool?
+
+Answer:
+
+Question 3: How could this agent be extended to include additional features like
+multi-day forecasts or news sentiment analysis?
+
+Answer:
+
+Note
+----
+This project is for educational purposes only and does not provide personal
+financial advice.
+

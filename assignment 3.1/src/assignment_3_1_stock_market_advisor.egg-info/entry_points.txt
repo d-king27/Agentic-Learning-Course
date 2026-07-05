@@ -1,0 +1,2 @@
+[console_scripts]
+stock-market-advisor = stock_market_advisor.main:main

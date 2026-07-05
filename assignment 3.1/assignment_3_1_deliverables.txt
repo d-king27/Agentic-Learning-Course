@@ -1,0 +1,146 @@
+Assignment 3.1 Deliverables: Stock Market Advisor Agent
+=========================================================
+
+Objective
+---------
+Build an AI agent that integrates an external stock market API for dynamic problem-solving. The agent accepts stock symbols, fetches real market data from Alpha Vantage, processes recent price and volume trends, and uses a language model to generate enriched buy, sell, or hold style recommendations.
+
+Important Note
+--------------
+This project is for educational purposes only. The generated recommendation is not personal financial advice and should not be used as the only basis for investment decisions.
+
+1. Python Script
+----------------
+The stock market advisor agent is implemented in the following files:
+
+- src/stock_market_advisor/agent.py
+- src/stock_market_advisor/main.py
+
+agent.py contains the main StockMarketAdvisorAgent class. It loads API keys from the shared .env file, fetches Alpha Vantage daily stock data, extracts recent market signals, and sends a compact stock analysis to the language model.
+
+main.py provides the command-line interface. It supports both single-symbol runs and multi-symbol runs, such as:
+
+python -m stock_market_advisor.main --symbol AAPL,TSLA,MSFT
+
+2. Sample Runs
+--------------
+The following output was produced by running the agent against three major stock symbols:
+
+python -m stock_market_advisor.main --symbol AAPL,TSLA,MSFT
+
+Fetching stock data for AAPL...
+
+Stock analysis:
+Symbol: AAPL
+Latest trading date: 2026-07-02
+Open: $294.12
+High: $309.42
+Low: $293.68
+Close: $308.63
+Volume: 75,400,626
+Daily close change: +14.25 (+4.84%)
+Five-day close change: +8.76%
+Average recent volume: 103,773,493
+Latest volume vs average: -27.34%
+
+Recommendation:
+1. Performance Summary:
+AAPL's stock has shown a strong performance recently. The stock closed at $308.63 on the latest trading day, a significant increase of $14.25 (+4.84%) from the previous trading day. Over the last five days, the stock has seen a rise of 8.76%, indicating a positive trend.
+
+2. Trend and Volume Insight:
+While the trend for AAPL is upward, the trading volume of 75,400,626 shares on the latest trading day is lower than the recent average volume of 103,773,493 shares, showing a decrease of 27.34%. This might indicate a lack of strong buying interest at the higher price levels, which could potentially result in a slowdown in the upward momentum.
+
+3. Recommendation:
+Given the strong recent performance but the lower volume, a cautious "hold" recommendation could be appropriate. This acknowledges the positive trend, but also recognizes the potential risk associated with the lower trading volume.
+
+4. Risk Notes:
+While AAPL's stock is currently showing a positive trend, the lower trading volume could indicate a potential lack of buyer interest at these higher price levels. Furthermore, stock market trends can change rapidly and without warning due to a variety of factors, including changes in the overall economy, news events, and company-specific developments.
+
+5. Additional Data:
+To improve the decision, additional data that could be helpful includes more detailed information about AAPL's recent financial performance, such as earnings reports and profitability ratios. It would also be useful to have data about the overall performance of the sector in which AAPL operates, and any upcoming events or developments that might impact the company's stock price.
+
+Fetching stock data for TSLA...
+
+Stock analysis:
+Symbol: TSLA
+Latest trading date: 2026-07-02
+Open: $428.01
+High: $432.35
+Low: $389.30
+Close: $393.45
+Volume: 73,915,762
+Daily close change: -31.85 (-7.49%)
+Five-day close change: +3.62%
+Average recent volume: 53,701,844
+Latest volume vs average: +37.64%
+
+Recommendation:
+1. Performance Summary:
+Tesla (TSLA) saw a significant drop of 7.49% on the latest trading day, closing at $393.45. Despite this sharp fall, the stock has seen an overall gain of 3.62% over the past five days.
+
+2. Trend and Volume Insight:
+The trading volume for TSLA on the latest trading day was significantly higher than its recent average – up 37.64%. This indicates a high level of investor interest and activity around the stock. However, the trend seems to be negative considering the sharp drop in the closing price.
+
+3. Recommendation:
+Based on the above analysis, the recommendation would be to 'Hold' TSLA. The recent five-day gain suggests some positive momentum, but the large drop on the latest trading day combined with a high trading volume may indicate a potential shift in market sentiment towards the stock.
+
+4. Risk Notes:
+Investors should note that the stock market is inherently risky and unpredictable. Despite the analysis provided, the stock's future performance may be influenced by a variety of factors, including broader market trends, changing investor sentiment, and company-specific news.
+
+5. Additional Data:
+Further data that could improve this decision includes the company’s financial health (like debt and cash flow), earnings reports, competitive analysis, and broader market and economic trends. Staying informed about Tesla's business strategy, future plans, and industry trends can also provide valuable context.
+
+Fetching stock data for MSFT...
+
+Stock analysis:
+Symbol: MSFT
+Latest trading date: 2026-07-02
+Open: $384.48
+High: $392.20
+Low: $383.70
+Close: $390.49
+Volume: 42,194,409
+Daily close change: +6.21 (+1.62%)
+Five-day close change: +4.70%
+Average recent volume: 74,527,484
+Latest volume vs average: -43.38%
+
+Recommendation:
+1. Performance Summary: Microsoft (MSFT) has been performing well in the most recent trading sessions. As of the latest trading date on July 2, 2026, the stock closed at $390.49, up by 1.62% (or $6.21) from the previous day. The stock has also seen a notable uptick of 4.7% over the past five days.
+
+2. Trend and Volume Insight: The stock's recent trend indicates an upward momentum. It opened at $384.48 and reached a high of $392.20 during the trading session, suggesting a bullish sentiment among investors. However, the trading volume was below the average recent volume, with a decrease of 43.38%. This lower volume could suggest less confidence in the current price movement.
+
+3. Recommendation: Given the steady upward trend, a "buy" recommendation seems reasonable. However, due to the decreased volume, it could be wise to adopt a 'Hold' stance and observe the stock's performance for some more time.
+
+4. Risk Notes: While the stock's recent performance is impressive, the lower than average trading volume could be a potential risk. Lower volume may sometimes indicate less investor confidence, which could lead to increased price volatility.
+
+5. What Additional Data Would Improve the Decision: Additional information on the company's recent financials, such as earnings reports and forward-looking statements, would be beneficial. Also, broader market trends and industry-specific news can provide valuable context. Finally, any news or events directly affecting Microsoft could influence the stock's future performance.
+
+3. Reflection Report
+--------------------
+This agent demonstrates tool integration by connecting a language model to live stock market data. Instead of asking the model to rely only on general knowledge, the script first retrieves structured market information from Alpha Vantage. It then processes that raw data into a concise summary that includes the latest close price, daily close change, five-day close change, recent average volume, and latest volume compared with the recent average.
+
+This tool integration enhanced the agent's capabilities because the model received current, numeric context before generating its response. The external API provided real-world data, while the language model converted that data into a readable explanation and recommendation. This combination made the output more grounded and useful than a generic stock market response.
+
+The main implementation challenge was connecting the structured API response to a prompt that the language model could use effectively. Alpha Vantage returns nested JSON data, so the agent needed to extract the useful fields and avoid sending too much raw data to the model. Another challenge was handling operational issues such as API keys, possible rate limits, missing data, API response messages, and making sure the user sees clear errors when something goes wrong.
+
+The agent also includes a multi-stock feature, allowing several symbols to be analyzed in a single run. This supports the bonus task by making it possible to compare outputs for multiple stocks without restarting the script each time.
+
+4. Reflection Questions
+-----------------------
+
+Question 1: How did integrating the stock API improve the AI's real-world applicability?
+
+Integrating the Alpha Vantage API made the agent more applicable to real-world use because it allowed the model to work with actual stock data rather than relying on static training knowledge. The agent could retrieve recent prices and volumes, calculate trends, and provide recommendations based on current market signals. This made the response more relevant, timely, and specific to the user's chosen stock symbol.
+
+Question 2: What insights did the AI generate that were enhanced by the external tool?
+
+The AI's insights were enhanced by data such as the latest close price, daily price movement, five-day trend, trading volume, and volume compared with the recent average. These values gave the model concrete evidence for its recommendation. For example, a recommendation to hold or be cautious could be linked to short-term price movement, trend direction, or unusually high or low volume.
+
+Question 3: How could this agent be extended to include additional features like multi-day forecasts or news sentiment analysis?
+
+The agent could be extended by fetching longer historical time series data and calculating technical indicators such as moving averages, volatility, or relative strength. It could also integrate a news API to collect recent headlines about each company and use sentiment analysis to understand whether current news is positive, negative, or neutral. Combining market trends with news sentiment would give the agent a broader basis for recommendations.
+
+5. Bonus Feature
+----------------
+The agent supports multi-stock analysis in a single run. Users can enter comma-separated symbols, such as AAPL,TSLA,MSFT, and the agent will fetch, analyze, and generate recommendations for each symbol in sequence.

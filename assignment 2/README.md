@@ -35,6 +35,11 @@ Agentic-Learning-Course/.env
 ```
 
 The code will automatically load this when the agent starts.
+You can also choose a model in the same file:
+
+```text
+OPENAI_MODEL="gpt-4"
+```
 
 ## Run
 
