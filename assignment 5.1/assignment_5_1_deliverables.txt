@@ -1,0 +1,175 @@
+Assignment 5.1 Deliverables: Multi-Agent Weather Logistics System
+=================================================================
+
+Objective
+---------
+Design and implement a multi-agent system with three collaborating agents:
+
+- Data Gathering Agent: fetches live weather forecast data from OpenWeatherMap.
+- Data Processing Agent: analyzes the collected weather data and generates
+  logistics insights.
+- Visualization Agent: creates a graphical temperature trend chart.
+
+This system demonstrates how specialized agents can collaborate to solve a
+real-world logistics planning task.
+
+1. Python Code
+--------------
+The implementation is contained in the following files:
+
+- src/weather_logistics_system/agents.py
+- src/weather_logistics_system/main.py
+
+agents.py defines the three main agents and the overall WeatherLogisticsSystem
+orchestrator. main.py provides the command-line interface for running the system
+with one or more locations.
+
+2. Generated Insights
+---------------------
+The following output was generated for London.
+
+Command:
+
+python -m weather_logistics_system.main --location "London"
+
+Console Output:
+
+Starting multi-agent system for London...
+
+Data Gathering Agent: gathering weather data for London...
+Data Processing Agent: summarizing forecast data...
+Visualization Agent: creating temperature trend chart...
+Visualization Agent: chart saved to:
+C:/agentic-course/assignment 5.1/outputs/temperature_trends_london.png
+Data Processing Agent: generating logistics insights...
+
+Forecast Summary:
+Location: London, GB
+Forecast periods:
+- 2026-07-05 18:00:00: 29.3 C, feels like 29.3 C, overcast clouds, humidity 44%, wind 5.0 m/s, precipitation 0.0 mm
+- 2026-07-05 21:00:00: 27.4 C, feels like 27.4 C, broken clouds, humidity 45%, wind 4.1 m/s, precipitation 0.0 mm
+- 2026-07-06 00:00:00: 23.2 C, feels like 23.0 C, overcast clouds, humidity 52%, wind 3.2 m/s, precipitation 0.0 mm
+- 2026-07-06 03:00:00: 17.9 C, feels like 17.5 C, overcast clouds, humidity 67%, wind 3.0 m/s, precipitation 0.0 mm
+- 2026-07-06 06:00:00: 19.5 C, feels like 19.2 C, overcast clouds, humidity 65%, wind 3.3 m/s, precipitation 0.0 mm
+
+Generated Insights:
+
+1. Weather Overview:
+The weather forecast for London, GB indicates warm temperatures ranging from
+17.9 C to 29.3 C with moderate humidity between 44% and 67%. Wind speeds will
+vary from 3 m/s to 5 m/s, however, there is no expected precipitation. The skies
+will be mostly overcast, with some broken clouds.
+
+2. Delivery or Transport Risks:
+With no expected precipitation and moderate winds, there are minimal risks to
+ground transport. However, temperatures are relatively high during the day,
+which may impact refrigerated goods or temperature-sensitive items.
+
+3. Packaging Recommendations:
+For temperature-sensitive goods, consider using insulated packaging or
+refrigerated transport options during the hotter periods of the day. No special
+waterproofing or wind-resistant measures are necessary due to lack of rain and
+low wind speeds.
+
+4. Staffing or Scheduling Recommendations:
+Given the high temperatures during the day, it may be beneficial to schedule
+deliveries or loading/unloading operations during cooler hours, such as early
+morning or late evening, to protect staff from potential heat exhaustion. Staff
+should also have access to adequate hydration.
+
+5. Overall Logistics Advice:
+Overall, the weather should not pose significant challenges to logistics. The
+main consideration is the warm temperature, especially for temperature-sensitive
+goods and staff scheduling. Regular operations can proceed with minor
+adjustments for heat management.
+
+Graph Output:
+Temperature chart saved to:
+C:/agentic-course/assignment 5.1/outputs/temperature_trends_london.png
+
+Graph image link:
+Use the attached image link in the submission form for the temperature trend
+chart.
+
+3. Graphs
+---------
+The Visualization Agent generated a temperature trend chart and saved it as a
+PNG image.
+
+Local project output path:
+
+C:/agentic-course/assignment 5.1/outputs/temperature_trends_london.png
+
+Submission graph reference:
+
+Use the attached image link for the generated temperature trend graph.
+
+4. Reflection Report
+--------------------
+This assignment demonstrates a multi-agent design where each agent has a
+specialized role. The Data Gathering Agent is responsible for connecting to the
+external OpenWeatherMap API and retrieving forecast data for the chosen
+location. The Data Processing Agent then converts the raw forecast data into a
+clear summary and uses the language model to produce logistics recommendations.
+The Visualization Agent creates a graph showing the temperature trend across
+the next forecast periods.
+
+Separating the system into agents makes the workflow easier to understand and
+maintain. Each agent has a focused responsibility: one gathers data, one
+interprets it, and one visualizes it. This division of labor makes the system
+more modular than a single large script. If the API call fails, the issue is
+isolated to the data gathering stage. If the graph needs improvement, the
+visualization agent can be updated without changing the rest of the system.
+
+The collaboration between agents adds value because the final output is richer
+than a simple weather lookup. The system provides raw forecast data, actionable
+logistics insights, and a visual chart. This makes the information easier to
+use for decision-making, especially for transport, delivery scheduling,
+packaging, and staff planning.
+
+One challenge was making sure the graph output was handled clearly. Since the
+submission platform uses image links rather than direct file uploads, the system
+saves the chart into an outputs directory and prints the chart path clearly in
+the command line. For submission, the generated PNG can then be attached or
+linked using the platform's image/link option.
+
+5. Reflection Questions
+-----------------------
+
+Question 1: How does collaboration between three agents improve the system's
+efficiency?
+
+Dividing the work between three agents improves efficiency because each agent
+has a clear and focused job. The Data Gathering Agent retrieves forecast data,
+the Data Processing Agent turns the data into actionable logistics advice, and
+the Visualization Agent creates a chart. This makes the system easier to debug,
+extend, and understand.
+
+Question 2: What challenges did you face in integrating the agents?
+
+The main challenge was passing data cleanly between agents. The weather API
+returns nested forecast data, so the system needed to extract only the most
+useful details before sending them to the language model and visualization
+stage. Another challenge was making the graph output explicit so that the user
+knows where the generated PNG file is saved.
+
+Question 3: How could this system be extended for other use cases, such as
+financial analysis?
+
+This system could be adapted to financial analysis by replacing the weather
+data API with a stock market API. A data gathering agent could fetch stock
+prices, a processing agent could analyze price movement and volume, and a
+visualization agent could generate price trend charts. The same architecture
+could also be used for supply chain monitoring, traffic analysis, energy demand
+forecasting, or operational risk planning.
+
+6. Bonus Features
+-----------------
+The system supports multiple locations in one command by passing comma-separated
+locations, such as:
+
+python -m weather_logistics_system.main --location "London,New York,Tokyo"
+
+The Visualization Agent also creates saved PNG graph files for each location,
+making the generated charts easier to include in the assignment submission.
+

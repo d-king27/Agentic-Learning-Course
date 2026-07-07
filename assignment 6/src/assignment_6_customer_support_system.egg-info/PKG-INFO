@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: assignment-6-customer-support-system
+Version: 0.1.0
+Summary: A unified customer support agentic system using tool use, planning, reflection, and multi-agent patterns.
+Requires-Python: >=3.10
+Requires-Dist: langchain
+Requires-Dist: langchain-core
+Requires-Dist: langchain-openai
+Requires-Dist: openai

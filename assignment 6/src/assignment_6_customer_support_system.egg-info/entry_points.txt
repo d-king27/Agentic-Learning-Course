@@ -1,0 +1,2 @@
+[console_scripts]
+customer-support-system = customer_support_system.main:main

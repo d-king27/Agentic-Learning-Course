@@ -1,0 +1,61 @@
+Assignment 6 Deliverables: Unified Customer Support Agentic System
+=================================================================
+
+1. Python Script
+----------------
+Submit the full implementation:
+
+- src/customer_support_system/agents.py
+- src/customer_support_system/main.py
+
+The system combines Tool Use, Planning, Reflection, and Multi-Agent patterns.
+
+2. Sample Outputs
+-----------------
+Include support workflow outputs for multiple customer IDs.
+
+Suggested successful cases:
+
+- 123
+- 456
+- 789
+
+Suggested fallback case:
+
+- 999
+
+3. Architecture and Workflow Explanation
+----------------------------------------
+Explain how the system works:
+
+Customer ID
+-> Tool Use Agent retrieves simulated customer data
+-> Planning Agent creates an initial resolution plan
+-> Reflection Agent refines the plan
+-> Orchestrator returns the final support-ready output
+
+4. Reflection Report
+--------------------
+Evaluate the system based on:
+
+- Efficiency
+- Scalability
+- Adaptability
+- Error handling
+
+5. Reflection Questions
+-----------------------
+
+Question 1: How does combining Tool Use, Planning, Reflection, and Multi-Agent
+patterns improve the system?
+
+Answer:
+
+Question 2: How does the simulated API support the Tool Use pattern?
+
+Answer:
+
+Question 3: How could this system connect to a real support platform?
+
+Answer:
+

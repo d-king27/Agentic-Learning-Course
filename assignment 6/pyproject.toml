@@ -1,0 +1,22 @@
+[project]
+name = "assignment-6-customer-support-system"
+version = "0.1.0"
+description = "A unified customer support agentic system using tool use, planning, reflection, and multi-agent patterns."
+requires-python = ">=3.10"
+dependencies = [
+    "langchain",
+    "langchain-core",
+    "langchain-openai",
+    "openai",
+]
+
+[project.scripts]
+customer-support-system = "customer_support_system.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
